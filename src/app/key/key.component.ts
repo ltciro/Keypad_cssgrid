@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Key } from "src/app/key/key.interface";
+
 
 @Component({
   selector: 'app-key',
@@ -9,12 +9,13 @@ import { Key } from "src/app/key/key.interface";
 })
 export class KeyComponent implements OnInit {
   @Input() key: Key ;
+  @Output() valPressed = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
-  keyPress(){
-    console.log(this.key)
+  keyPress(val){
+    this.valPressed.emit(val)
   }
 
 }

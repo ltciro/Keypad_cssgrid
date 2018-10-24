@@ -1,11 +1,19 @@
 .grid-container-all {
   display: grid;
   grid-template-columns: 33% 33% 33% ;
-  grid-row-gap: 10px;
+}
+.grid-item-code {
+   grid-column-start: 2;
+}
+.grid-item-submit{
+   grid-column-start: 2;
+    grid-row-start: 3;
 }
 .grid-container-keypad {
   grid-column-start: 2;
+  grid-row-start: 2;
   display: grid;
   grid-column-gap: 10px;
+  grid-row-gap: 10px;
   grid-template-columns: 33% 33% 33%;
 }

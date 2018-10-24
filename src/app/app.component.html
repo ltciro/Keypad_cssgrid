@@ -1,5 +1,11 @@
-<div class="grid-container-all" >
-  <div class="grid-container-keypad"  *ngFor="let rowKey of keys ">
-    <app-key *ngFor="let key of rowKey"  [key]="key"  class="grid-item"></app-key>
+
+
+<form class="grid-container-all">
+  <mat-form-field class="example-full-width" class="grid-item-code" >
+    <input matInput placeholder="Code" [(ngModel)]="input" name="input">
+  </mat-form-field>
+  <div class="grid-container-keypad">
+    <app-key *ngFor="let key of keys"  [key]="key"  (valPressed)="valPressed($event)" class="grid-item"></app-key>
   </div>
-<div>
+  <button mat-button color="primary" class="grid-item-submit" (click)="submit()">Submit</button>
+</form>
