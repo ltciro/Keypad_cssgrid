@@ -1,0 +1,1 @@
+export const HOST = 'http://10.3.10.104:8000/';
