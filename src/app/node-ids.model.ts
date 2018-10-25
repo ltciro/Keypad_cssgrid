@@ -10,8 +10,7 @@ export const touchpadIds = {
   '9': '77b1695a.51b948',
   '0': 'ae4169a.c224398',
   'bkspace': '3d4cf4c0.87792c',
-  'cancel': 'b6b887d4.885fb8',
-  'submit': '12e91636.2c75ba'
+  'cancel': 'b6b887d4.885fb8'
 }
 export const alertIds = {
   'message': '90ade531.1a25f8'
@@ -21,3 +20,5 @@ export const status = {
   'fromTouchpad': '4ad78c0.ff18a74'
 }
 export const inputId = 'c36372ce.28bd5'
+
+export const submitId = '12e91636.2c75ba'
