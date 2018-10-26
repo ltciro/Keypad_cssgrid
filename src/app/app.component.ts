@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SocketService } from './socket.service'
-import { touchpadIds, alertIds, inputId, submitId } from './node-ids.model'
-import { HOST } from './configServer'
+import { SocketService } from './socket.service';
+import { touchpadIds, alertIds, inputId, submitId } from './node-ids.model';
+import { HOST } from './configServer';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,12 +14,12 @@ export class AppComponent {
   keys;
   constructor(private http: HttpClient, private socketService: SocketService) {
     this.keys = Object.entries(touchpadIds);
-    console.log(this.keys)
+    console.log(this.keys);
   }
 
   submit(){
-    const nodeSubmitId = submitId
-    this.http.get(HOST +'send_input?nodeId='+nodeSubmitId+'&user_input=submit').subscribe(data => {
+    const nodeSubmitId = submitId;
+    this.http.get(HOST +'send_input?nodeId=' + nodeSubmitId + '&user_input=submit').subscribe(data => {
       console.log('hola Lau submit', data);
     })
     console.log(this.input); // endpoint por boton submit
@@ -28,12 +28,13 @@ export class AppComponent {
 
   ngOnInit() {
     this.socketService.socket.on(alertIds['message'], (data)=>{
-      if(data.msg !== ""){alert(data.msg);}
-    })
+      console.log("data.msg.node ", data.node);
+      if (data.msg.payload !== '') { alert(data.msg.payload); }
+    });
     this.socketService.socket.on(inputId, (data)=>{
-      this.input = data.msg;
-    })
-   
+      console.log("data.msg.node ", data.node);
+      this.input = data.msg.payload;
+    });
   }
 
 }
