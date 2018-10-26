@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
-import { HOST } from './configServer'
+import { HOST } from './configServer';
 
 @Injectable({
   providedIn: 'root'
