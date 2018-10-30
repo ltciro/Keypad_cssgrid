@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KeyComponent } from './key/key.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StatusComponent } from './status/status.component';
+import { CompileDirective } from "src/app/directive/compile.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     KeyComponent,
-    StatusComponent
+    StatusComponent,
+    CompileDirective
   ],
   imports: [
     BrowserModule,

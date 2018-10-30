@@ -1,5 +1,5 @@
 export const touchpadIds = {
-  '1': 'a5f2d777.18b7c8',
+  '1': '1d3f7969.7d8d47',
   '2': '9b29d1fb.bcf93',
   '3': '74827a8e.d05874',
   '4': '7ec1a407.411f3c',
